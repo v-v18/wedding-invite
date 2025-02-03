@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Loop through each section and animate the .content inside it
     gsap.utils.toArray(".section").forEach((section) => {
         const content = section.querySelector(".content");
-        
-        // Check if the content is found
+
         if (content) {
+            // If content is found, apply animation
             gsap.fromTo(
                 content,
                 { opacity: 0, y: 50 },  // Initial state
@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             );
         } else {
-            console.error("Content not found for section: ", section);
+            // Log a message for sections without .content
+            console.log("No .content found for section: ", section);
         }
     });
 });
