@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/wedding-invite/static/css/main.af184f34.chunk.css",
+    "main.js": "/wedding-invite/static/js/main.7758cf6d.chunk.js",
+    "main.js.map": "/wedding-invite/static/js/main.7758cf6d.chunk.js.map",
+    "runtime-main.js": "/wedding-invite/static/js/runtime-main.53a57d5a.js",
+    "runtime-main.js.map": "/wedding-invite/static/js/runtime-main.53a57d5a.js.map",
+    "static/js/2.ffdf3cb6.chunk.js": "/wedding-invite/static/js/2.ffdf3cb6.chunk.js",
+    "static/js/2.ffdf3cb6.chunk.js.map": "/wedding-invite/static/js/2.ffdf3cb6.chunk.js.map",
+    "index.html": "/wedding-invite/index.html",
+    "static/css/main.af184f34.chunk.css.map": "/wedding-invite/static/css/main.af184f34.chunk.css.map",
+    "static/js/2.ffdf3cb6.chunk.js.LICENSE.txt": "/wedding-invite/static/js/2.ffdf3cb6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.53a57d5a.js",
+    "static/js/2.ffdf3cb6.chunk.js",
+    "static/css/main.af184f34.chunk.css",
+    "static/js/main.7758cf6d.chunk.js"
+  ]
+}
