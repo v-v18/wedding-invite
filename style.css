@@ -1,55 +1,23 @@
-/* Basic Reset */
-* {
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background: url('flowers.jpg') no-repeat center center fixed;
-    background-size: cover;
     font-family: Arial, sans-serif;
-    color: white;
-    height: 100vh;
     overflow-x: hidden;
 }
 
-/* Full-screen Sections */
 .section {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0; /* Start hidden */
-    transform: translateY(50px); /* Start off-screen */
-    position: relative;
-    text-align: center;
-}
-
-/* Content style */
-.content {
-    font-size: 2.5em;
-    z-index: 1;
-}
-
-/* RSVP Button */
-.rsvp-button {
-    display: inline-block;
-    padding: 15px 25px;
-    background-color: #F4A7B9;
+    background: url('flowers.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: white;
-    text-decoration: none;
-    font-size: 1.5em;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
-.rsvp-button:hover {
-    background-color: #E89BAF;
-}
-
-/* Last section */
-.last {
-    background-color: rgba(255, 255, 255, 0.7);
+.content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
     border-radius: 10px;
 }
