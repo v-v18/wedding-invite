@@ -1,0 +1,24 @@
+.home-sticky-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .home-sticky-content h1,
+  .home-sticky-content h2,
+  .home-sticky-content h3 {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .home-sticky-content.sticky-content-2 {
+    background: #6a1b9a;
+  }
+  
+  .home-sticky-content.sticky-content-3 {
+    background: #d32f2f;
+  }
+  
