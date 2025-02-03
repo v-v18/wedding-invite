@@ -1,10 +1,37 @@
-/* Resetting default styles and setting background image */
+/* General reset */
 body {
+    margin: 0;
+    font-family: Arial, sans-serif;
     background: url('flowers.jpg') no-repeat center center fixed;
     background-size: cover;
-    margin: 0;
     overflow-x: hidden;
-    font-family: Arial, sans-serif;
+}
+
+/* Container for the entire page */
+#container {
+    width: 100%;
+}
+
+/* Sections are full viewport height */
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    position: relative;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Initially translate content down */
+}
+
+/* Content styles within sections */
+.content {
+    color: white;
+    text-align: center;
+    z-index: 10; /* Make sure text stays on top of background */
+    font-size: 2em;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 /* Styling the RSVP button */
@@ -21,17 +48,4 @@ body {
 
 .rsvp-button:hover {
     background: #E89BAF;
-}
-
-/* Each section takes the full height of the viewport */
-.section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2em;
-    position: relative;
-    opacity: 0; /* Hidden by default */
-    transform: translateY(50px); /* Start slightly below */
-    transition: opacity 0.5s, transform 0.5s; /* Smooth transition for opacity and position */
 }
