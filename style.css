@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #fbeff2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 50px;
+}
+
+h1 {
+    color: #d63384;
+}
+
+.couple {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.date, .location {
+    font-size: 1.2em;
+}
+
+.countdown {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+.rsvp-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #d63384;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.rsvp-button:hover {
+    background: #a62463;
+}
