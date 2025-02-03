@@ -1,44 +1,37 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: #fbeff2;
-    color: #333;
+    background: url('flowers.jpg') no-repeat center center fixed;
+    background-size: cover;
     margin: 0;
-    padding: 0;
-}
-
-.container {
-    padding: 50px;
+    overflow-x: hidden;
 }
 
 h1 {
-    color: #d63384;
-}
-
-.couple {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.date, .location {
-    font-size: 1.2em;
-}
-
-.countdown {
-    font-size: 2em;
-    margin: 20px 0;
+    color: #F4A7B9;
 }
 
 .rsvp-button {
     display: inline-block;
     padding: 10px 20px;
-    background: #d63384;
+    background: #F4A7B9;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.2em;
+    transition: background 0.3s ease-in-out;
 }
 
 .rsvp-button:hover {
-    background: #a62463;
+    background: #E89BAF;
+}
+
+/* Sections start hidden to be animated in */
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    position: relative;
+    opacity: 0; /* Hidden initially */
+    transform: translateY(50px); /* Shift down initially */
 }

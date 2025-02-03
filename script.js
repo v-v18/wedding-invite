@@ -1,11 +1,22 @@
-function countdown() {
-    const weddingDate = new Date("June 15, 2025 00:00:00").getTime();
-    const now = new Date().getTime();
-    const timeLeft = weddingDate - now;
+// Ensure GSAP and ScrollTrigger are loaded
+document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger);
 
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    document.getElementById("countdown").innerText = `${days} days to go!`;
-}
-
-countdown();
-setInterval(countdown, 1000 * 60 * 60); // Update every hour
+    gsap.utils.toArray(".section").forEach((section) => {
+        gsap.fromTo(
+            section,
+            { opacity: 0, y: 50 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                },
+            }
+        );
+    });
+});
