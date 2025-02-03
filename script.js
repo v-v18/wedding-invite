@@ -1,30 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Loop through each section and animate the .content inside it
+    // Targeting all .section elements
     gsap.utils.toArray(".section").forEach((section) => {
         const content = section.querySelector(".content");
 
         if (content) {
-            // If content is found, apply animation
-            gsap.fromTo(
-                content,
-                { opacity: 0, y: 50 },  // Initial state
+            // GSAP animation for each section's content
+            gsap.fromTo(content,
+                { opacity: 0, y: 50 },  // Start hidden and shifted down
                 {
                     opacity: 1,
-                    y: 0,  // Final state
+                    y: 0,  // Animate to visible and centered
                     duration: 1.5,
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: section,
-                        start: "top 80%",
-                        toggleActions: "play none none none",
+                        start: "top 80%", // Trigger when top of section is at 80% of viewport
+                        toggleActions: "play none none none", // Play animation only when in view
                     }
                 }
             );
-        } else {
-            // Log a message for sections without .content
-            console.log("No .content found for section: ", section);
         }
     });
 });
