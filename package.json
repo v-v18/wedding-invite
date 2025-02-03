@@ -1,41 +1,32 @@
 {
-    "name": "my-wedding-invitation",
-    "version": "1.0.0",
-    "private": true,
-    "homepage": "https://v-v18.github.io/wedding-invite",
-    "dependencies": {
-        "gsap": "^3.9.0",
-        "react": "^18.0.0",
-        "react-dom": "^18.0.0",
-        "react-scripts": "5.0.0"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "devDependencies": {
-        "gh-pages": "^6.3.0"
-    }
+  "name": "wedding-invite",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-scripts": "4.0.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
+  },
+  "homepage": "https://v-v18.github.io/wedding-invite",
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
