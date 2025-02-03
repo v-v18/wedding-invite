@@ -1,17 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
+    // Loop through each section and animate the .content inside it
     gsap.utils.toArray(".section").forEach((section) => {
         const content = section.querySelector(".content");
-        console.log(content);  // Check if the content is found
-
+        
+        // Check if the content is found
         if (content) {
             gsap.fromTo(
                 content,
-                { opacity: 0, y: 50 },
+                { opacity: 0, y: 50 },  // Initial state
                 {
                     opacity: 1,
-                    y: 0,
+                    y: 0,  // Final state
                     duration: 1.5,
                     ease: "power2.out",
                     scrollTrigger: {
@@ -21,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
             );
+        } else {
+            console.error("Content not found for section: ", section);
         }
     });
 });

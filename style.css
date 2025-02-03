@@ -1,43 +1,17 @@
-/* General reset */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
     background: url('flowers.jpg') no-repeat center center fixed;
     background-size: cover;
+    margin: 0;
     overflow-x: hidden;
 }
 
-/* Container for the entire page */
-#container {
-    width: 100%;
+h1 {
+    color: #F4A7B9;
 }
 
-/* Sections are full viewport height */
-.section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2em;
-    position: relative;
-    opacity: 0; /* Initially hidden */
-    transform: translateY(50px); /* Initially translate content down */
-}
-
-/* Content styles within sections */
-.content {
-    color: white;
-    text-align: center;
-    z-index: 10; /* Make sure text stays on top of background */
-    font-size: 2em;
-    max-width: 90%;
-    margin: 0 auto;
-}
-
-/* Styling the RSVP button */
 .rsvp-button {
     display: inline-block;
-    padding: 15px 30px;
+    padding: 10px 20px;
     background: #F4A7B9;
     color: white;
     text-decoration: none;
@@ -48,4 +22,16 @@ body {
 
 .rsvp-button:hover {
     background: #E89BAF;
+}
+
+/* Sections start hidden to be animated in */
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    position: relative;
+    opacity: 0; /* Hidden initially */
+    transform: translateY(50px); /* Shift down initially */
 }
