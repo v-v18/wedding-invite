@@ -1,23 +1,62 @@
+/* General page styles */
 body {
+    background: url('flowers.jpg') no-repeat center center fixed;
+    background-size: cover;
     margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
     overflow-x: hidden;
 }
 
+h1 {
+    color: #F4A7B9;
+    text-align: center;
+}
+
+/* Section Styles */
 .section {
     height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    background: url('flowers.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    justify-content: center;
+    font-size: 2rem;
+    opacity: 0; /* Sections hidden initially */
+    transform: translateY(50px); /* For smooth scroll effect */
+    transition: transform 0.8s ease-out, opacity 1s ease-out;
 }
 
-.content {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 10px;
+/* Who Section */
+.who {
+    background: rgba(255, 223, 223, 0.8);
+}
+
+/* When Section */
+.when {
+    background: rgba(223, 255, 223, 0.8);
+}
+
+/* Where Section */
+.where {
+    background: rgba(223, 223, 255, 0.8);
+}
+
+/* RSVP Button */
+.rsvp-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #F4A7B9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background 0.3s ease-in-out;
+}
+
+.rsvp-button:hover {
+    background: #E89BAF;
+}
+
+/* Scroll animations */
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
 }
