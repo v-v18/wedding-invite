@@ -33,7 +33,7 @@ const Home = () => {
     <div className="home-container">
       <div className="content">
         <div className="home-text">
-          <h1>Our Wedding Invitation</h1>
+          <h1><br/><br/><br/><br/>Our Wedding Invitation</h1>
           <p>We are so excited to invite you to our wedding!</p>
           <p>
             <br />

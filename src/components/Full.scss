@@ -26,6 +26,16 @@ h2 {
     margin-bottom: 20px;
     font-family: 'Merriweather', serif;
 }
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem; /* Smaller font size for tablets */
+  }
+}
+@media screen and (max-width: 480px) {
+  h2 {
+    font-size: 1.2rem; /* Even smaller font size for mobile phones */
+  }
+}
   
 p {
     font-size: 1.5rem;
@@ -40,6 +50,17 @@ p {
     font-size: 2rem;
     margin-top: 20px;
 }
+@media screen and (max-width: 768px) {
+  .countdown {
+      font-size: 1.5rem; /* Smaller font size for tablets */
+  }
+}
+@media screen and (max-width: 480px) {
+  .countdown {
+      font-size: 1.2rem; /* Even smaller font size for mobile phones */
+  }
+}
+
 
 /* Styling for the schedule */
 .schedule {
@@ -56,6 +77,16 @@ p {
   margin-bottom: 20px;
   text-decoration: underline; /* Underlines the heading */
 }
+@media screen and (max-width: 768px) {
+  .schedule h3 {
+      font-size: 20px; /* Smaller font size for tablets */
+  }
+}
+@media screen and (max-width: 480px) {
+  .schedule h3 {
+      font-size: 17px; /* Even smaller font size for mobile phones */
+  }
+}
 
 .schedule ul {
   font-family: 'Merriweather', serif;
@@ -67,6 +98,16 @@ p {
   font-family: 'Merriweather', serif;
   font-size: 18px;
   margin-bottom: 10px;
+}
+@media screen and (max-width: 768px) {
+  .schedule li {
+      font-size: 15px; /* Smaller font size for tablets */
+  }
+}
+@media screen and (max-width: 480px) {
+  .schedule li {
+      font-size: 12px; /* Even smaller font size for mobile phones */
+  }
 }
 
 .schedule li strong {

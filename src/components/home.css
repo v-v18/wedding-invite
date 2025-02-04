@@ -14,12 +14,16 @@ html, body {
   align-items: center;
   justify-content: center;
   padding: 50px;
-  background: url("flowers.jpg") no-repeat center center;
-  background-size: cover;
+  background: url("flowers3.jpg") no-repeat center center;
+  background-size: contain;
   background-attachment: fixed;
   color: black;
   text-align: center;
+  width: 100vw;
   height: 100vh;
+  /* min-height: 100vh;
+  min-width: 100vw; */
+  overflow: hidden;
   animation: fadeIn 1s ease-in-out;
 }
 
@@ -49,6 +53,24 @@ h1 {
   font-family: 'Merriweather', serif;
   font-size: 4rem;
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .home-text h1 {
+    font-size: 2rem; /* Smaller font size for tablets */
+  }
+  .home-text p {
+    font-size: 1rem; /* Smaller font size for tablets */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-text h1 {
+    font-size: 1.5rem; /* Even smaller font size for mobile phones */
+  }
+  .home-text p {
+    font-size: 1rem; /* Smaller font size for tablets */
+  }
 }
 
 p {

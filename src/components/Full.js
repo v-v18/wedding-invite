@@ -68,7 +68,7 @@ const Full = () => {
       <b />
       {/* Schedule Section */}
       <div className="schedule">
-        <h3>Our Wedding Schedule</h3>
+        <h3>Program</h3>
         <ul>
           <li>
             <strong>3:00 PM:</strong> Ceremony Begins
