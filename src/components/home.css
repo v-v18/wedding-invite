@@ -1,0 +1,69 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Merriweather', serif;
+  overflow-x: hidden;
+}
+
+
+.home-container {
+  font-family: 'Merriweather', serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background: url("flowers.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: black;
+  text-align: center;
+  height: 100vh;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.content {
+  font-family: 'Merriweather', serif;
+  position: relative;
+  z-index: 1; /* Keeps content above the background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.home-text {
+  font-family: 'Merriweather', serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease-out; /* Add smooth transition to the scaling */
+}
+
+h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-family: 'Merriweather', serif;
+  font-size: 1.5rem;
+}
+
+/* Animation for fading in and scaling text */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

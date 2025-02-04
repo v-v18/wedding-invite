@@ -1,0 +1,13 @@
+.app-container {
+  font-family: 'Merriweather', serif;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background: #fff;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.full-container {
+  font-family: 'Merriweather', serif;
+  background: transparent !important; /* Force transparency */
+}
