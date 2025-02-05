@@ -18,7 +18,9 @@
   },
   "homepage": "https://v-v18.github.io/wedding-invite",
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "css-loader": "^7.1.2",
+    "gh-pages": "^3.2.3",
+    "style-loader": "^4.0.0"
   },
   "browserslist": {
     "production": [
