@@ -1,0 +1,46 @@
+.full-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background: transparent;
+  color: black;
+}
+
+.full-content {
+  text-align: center;
+}
+
+.countdown-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.countdown-time {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.program-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+.program-table {
+  margin: 0 auto; /* Centers the table */
+  border-collapse: collapse; /* Removes any default table borders */
+}
+
+.program-table td {
+  padding: 5px 15px;
+  text-align: left; /* Left-aligns text in each cell */
+  font-size: 1.3rem;
+}
+
+.program-table td:first-child {
+  font-weight: bold; /* Bold the time */
+}

@@ -1,21 +1,20 @@
-import React, { useEffect } from 'react';
-import gsap from 'gsap';
-import './App.css';
-import './components/home.css';
-import './components/Full.scss';
-
-import Home from './components/Home';
-import Full from './components/Full';
+import React, { useEffect, useState } from "react";
+import gsap from "gsap";
+import "./App.css";
+import Home from "./components/Home";
+import Full from "./components/Full";
 
 const App = () => {
   useEffect(() => {
-    // Example of using GSAP for animations
-    gsap.from('.home-text', { opacity: 0, y: 50, duration: 1 });
+    gsap.from(".home-title", { opacity: 0, y: 100, duration: 1 });
+    gsap.from(".home-text", { opacity: 0, y: 50, duration: 1.5 });
+    gsap.from(".home-details", { opacity: 0, y: 50, duration: 1.5 });
   }, []);
 
   return (
     <div className="app-container">
-      <div className="background"> {/* This ensures background stays unchanged */}
+      <div className="background" />
+      <div className="content">
         <Home />
         <Full />
       </div>

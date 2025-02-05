@@ -1,91 +1,30 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Merriweather', serif;
-  overflow-x: hidden;
-}
-
-
 .home-container {
-  font-family: 'Merriweather', serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 50px;
-  background: url("flowers3.jpg") no-repeat center center;
-  background-size: contain;
-  background-attachment: fixed;
-  color: black;
-  text-align: center;
-  width: 100vw;
-  height: 100vh;
-  /* min-height: 100vh;
-  min-width: 100vw; */
-  overflow: hidden;
-  animation: fadeIn 1s ease-in-out;
+    text-align: center;
+    padding: 50px 20px;
+    color: black;
+    line-height: 1.6;
+    flex-direction: column;
 }
-
-.content {
-  font-family: 'Merriweather', serif;
-  position: relative;
-  z-index: 1; /* Keeps content above the background */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 50px;
-  box-sizing: border-box;
+  
+.home-title {
+    font-size: 4rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 20px;
 }
 
 .home-text {
-  font-family: 'Merriweather', serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.5s ease-out; /* Add smooth transition to the scaling */
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    display: block;
 }
 
-h1 {
-  font-family: 'Merriweather', serif;
-  font-size: 4rem;
-  margin-bottom: 20px;
+.home-details {
+    font-size: 1.3rem;
+    display: block;
+    margin-top: 20px;
 }
-
-@media screen and (max-width: 768px) {
-  .home-text h1 {
-    font-size: 2rem; /* Smaller font size for tablets */
+.home-details p {
+    margin: 10px 0; /* Adds spacing between each line in home-details */
   }
-  .home-text p {
-    font-size: 1rem; /* Smaller font size for tablets */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .home-text h1 {
-    font-size: 1.5rem; /* Even smaller font size for mobile phones */
-  }
-  .home-text p {
-    font-size: 1rem; /* Smaller font size for tablets */
-  }
-}
-
-p {
-  font-family: 'Merriweather', serif;
-  font-size: 1.5rem;
-}
-
-/* Animation for fading in and scaling text */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+  

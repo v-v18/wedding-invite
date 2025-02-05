@@ -1,97 +1,101 @@
 import React, { useState, useEffect } from "react";
-import gsap from "gsap";
-import "./Full.scss";
+import "./Full.css";
 
 const Full = () => {
-//   useEffect(() => {
-//     gsap.fromTo(".full-container h1", {
-//       opacity: 0,
-//       y: -50,
-//     }, {
-//       opacity: 1,
-//       y: 0,
-//       duration: 1,
-//       ease: "power3.out",
-//     });
-//   }, []);
+    const calculateTimeLeft = () => {
+        const targetDate = new Date("June 21, 2025");
+        const now = new Date();
+      
+        // If target date is in the past, return 0 months and 0 days
+        if (now >= targetDate) {
+          return { months: 0, days: 0 };
+        }
+      
+        // Calculate the total difference in time
+        const yearsLeft = targetDate.getFullYear() - now.getFullYear();
+        const monthsLeft = targetDate.getMonth() - now.getMonth() + 12 * yearsLeft;
+      
+        // Set the target date to the same day in the current month to calculate the days
+        const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+        const targetDateInCurrentMonth = new Date(targetDate.getFullYear(), targetDate.getMonth(), 1);
+        const daysLeft = Math.floor((targetDateInCurrentMonth - now) / (1000 * 60 * 60 * 24));
+      
+        // If the day of the current month is greater than the target, subtract an extra month
+        let monthsRemaining = monthsLeft;
+        if (now.getDate() > targetDate.getDate()) {
+          monthsRemaining--;
+        }
+      
+        // If monthsRemaining is 0, return only the days left
+        if (monthsRemaining === 0) {
+          return { months: 0, days: daysLeft };
+        }
+      
+        return { months: monthsRemaining, days: daysLeft };
+      };
+      
+  
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  
+    useEffect(() => {
+        const timer = setInterval(() => {
+          setTimeLeft(calculateTimeLeft());
+        }, 1000 * 60 * 60); // Update every hour
+    
+        return () => clearInterval(timer);
+      }, []);
 
-  const calculateTimeLeft = () => {
-    const targetDate = new Date("June 21, 2025 00:00:00").getTime();
-    const now = new Date().getTime();
-    const difference = targetDate - now;
-
-    if (difference <= 0) {
-      return { months: 0, days: 0, hours: 0, minutes: 0, seconds: 0 };
-    }
-
-    // Calculate months remaining
-    const targetDateObj = new Date("June 21, 2025");
-    const currentDateObj = new Date();
-    let monthsLeft = targetDateObj.getMonth() - currentDateObj.getMonth() + (12 * (targetDateObj.getFullYear() - currentDateObj.getFullYear()));
-
-    // Calculate the difference in days
-    const daysLeft = Math.floor(difference / (1000 * 60 * 60 * 24));
-
-    // Subtract the months' worth of days from the total days
-    const daysInMonths = monthsLeft * 30; // Approximate the number of days in a month
-    const remainingDays = daysLeft - daysInMonths;
-
-    return {
-      months: monthsLeft,
-      days: remainingDays,
-      hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-      minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-      seconds: Math.floor((difference % (1000 * 60)) / 1000),
-    };
-  };
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  return (
-    <div className="full-container">
-      <div className="full-text">
-        <h2>Countdown</h2>
-        <div className="countdown">
-          <span>{timeLeft.months} Months</span> and 
-          <span>{timeLeft.days} Days</span> left
+    return (
+        <div className="full-container">
+            <div className="full-content">
+            <br/><br/><br/><br/><br/><br/><br/>
+            <div className="countdown-time">
+                {timeLeft.months > 2 ? (
+                <div>
+                    <p>In {timeLeft.months} months...</p>
+                </div>
+                ) : (
+                <div>
+                    <p>In {timeLeft.days} days...</p>
+                </div>
+                )}
+            </div>
+            <br></br>
+            <h3 className="program-title">Program</h3>
+            <table className="program-table">
+                <tbody>
+                <tr>
+                    
+                </tr>
+                <tr>
+                    <td><strong>3:00 PM</strong></td>
+                    <td>Ceremony Begins</td>
+                </tr>
+                <tr>
+                    <td><strong>4:00 PM</strong></td>
+                    <td>Cocktail Hour</td>
+                </tr>
+                <tr>
+                    <td><strong>5:30 PM</strong></td>
+                    <td>Dinner & Toasts</td>
+                </tr>
+                <tr>
+                    <td><strong>7:00 PM</strong></td>
+                    <td>Dancing & Music</td>
+                </tr>
+                <tr>
+                    <td><strong>10:00 PM</strong></td>
+                    <td>Cake Cutting & Final Toast</td>
+                </tr>
+                <tr>
+                    <td><strong>10:00 PM</strong></td>
+                    <td>TestTestInvitation</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
         </div>
-      </div>
-      <b />
-      <b />
-      {/* Schedule Section */}
-      <div className="schedule">
-        <h3>Program</h3>
-        <ul>
-          <li>
-            <strong>3:00 PM:</strong> Ceremony Begins
-          </li>
-          <li>
-            <strong>4:00 PM:</strong> Cocktail Hour
-          </li>
-          <li>
-            <strong>5:30 PM:</strong> Dinner & Toasts
-          </li>
-          <li>
-            <strong>7:00 PM:</strong> Dancing & Music
-          </li>
-          <li>
-            <strong>10:00 PM:</strong> Cake Cutting & Final Toast
-          </li>
-          <li>
-            <strong>10:00 PM:</strong> TestTestInvitation
-          </li>
-        </ul>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Full;

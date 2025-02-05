@@ -1,13 +1,39 @@
-.app-container {
-  font-family: 'Merriweather', serif;
-  font-family: 'Roboto', sans-serif;
-  color: #333;
-  background: #fff;
-  min-height: 100vh;
-  margin: 0;
-}
-
-.full-container {
-  font-family: 'Merriweather', serif;
-  background: transparent !important; /* Force transparency */
-}
+/* Full-page background */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url("flowers3.jpg") no-repeat center center/cover;
+    z-index: -1; /* Behind all content */
+    background-size: auto;
+  }
+  
+  /* Main content container */
+  .content {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  /* Ensure sections stack correctly */
+  .home-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+  }
+  
+  .full-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: transparent; /* Important: Transparency */
+  }
+  
