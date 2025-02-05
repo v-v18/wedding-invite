@@ -37,3 +37,15 @@
     background-color: transparent; /* Important: Transparency */
   }
   
+  .image-container {
+    text-align: center; /* Centers the image */
+    margin-top: 20px;
+  }
+  
+  .bottom-image {
+    width: 100%; /* Adjust width as needed */
+    max-width: 500px; /* Prevents image from being too large */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }

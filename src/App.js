@@ -11,12 +11,17 @@ const App = () => {
     gsap.from(".home-details", { opacity: 0, y: 50, duration: 1.5 });
   }, []);
 
+  const imageUrl = "https://drive.google.com/uc?export=view&id=1MdUx0DQzz50O_LNJ2lQHJPQzVZ-yJz0q"
+
   return (
     <div className="app-container">
       <div className="background" />
       <div className="content">
         <Home />
         <Full />
+        <div className="image-container">
+          <img src={imageUrl} alt="Special Image" className="bottom-image" />
+        </div>
       </div>
     </div>
   );
