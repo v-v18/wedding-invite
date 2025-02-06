@@ -1,113 +1,79 @@
-// src/App.js
-
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import "./App.css";
 import Home from "./components/Home";
 import Full from "./components/Full";
-import firebase from "./firebase";  // Import Firebase config
+
+// Import the Firebase Authentication functions
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
+// Import your Firebase configuration (from firebase.js)
+import { auth } from "./firebase";
 
 const App = () => {
-  // State variables for handling email, password, error messages, and user state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
-  const [error, setError] = useState("");
-
-  // Login function using email and password
-  const handleLogin = (e) => {
-    e.preventDefault();
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        setUser(userCredential.user);  // Set the user object upon successful login
-      })
-      .catch((error) => {
-        setError(error.message);  // Display error message if login fails
-      });
-  };
-
-  // Signup function for new users
-  const handleSignup = (e) => {
-    e.preventDefault();
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        setUser(userCredential.user);  // Set the user object upon successful signup
-      })
-      .catch((error) => {
-        setError(error.message);  // Display error message if signup fails
-      });
-  };
-
-  // Logout function
-  const handleLogout = () => {
-    firebase.auth().signOut();
-    setUser(null);  // Clear the user state upon logout
-  };
 
   useEffect(() => {
+    // Animation for initial page load
     gsap.from(".home-title", { opacity: 0, y: 100, duration: 1 });
     gsap.from(".home-text", { opacity: 0, y: 50, duration: 1.5 });
     gsap.from(".home-details", { opacity: 0, y: 50, duration: 1.5 });
-  }, []);
+    
+    // If user is logged in, animate after login as well
+    if (user) {
+      gsap.from(".image-container", { opacity: 0, y: 50, duration: 1.5 });
+      gsap.from(".bottom-image", { opacity: 0, scale: 0.5, duration: 1.5 });
+    }
+  }, [user]);  // Runs whenever the user changes (after login)
 
-  const imageUrl = "https://drive.google.com/uc?export=view&id=1MdUx0DQzz50O_LNJ2lQHJPQzVZ-yJz0q";
+  // Handle user login with Firebase
+  const handleLogin = () => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in successfully
+        const user = userCredential.user;
+        setUser(user);
+        console.log("User signed in:", user);
+      })
+      .catch((error) => {
+        // Handle errors here
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error("Error code:", errorCode);
+        console.error("Error message:", errorMessage);
+      });
+  };
 
   return (
     <div className="app-container">
       <div className="background" />
       <div className="content">
-        <Home />
-        <Full />
-
-        {/* Conditional rendering based on whether user is authenticated */}
-        {user ? (
-          <div className="protected-content">
-            <h1>Welcome, {user.email}!</h1>
-            <button onClick={handleLogout}>Logout</button>
-            <div className="image-container">
-              <img src={imageUrl} alt="Special Image" className="bottom-image" />
-            </div>
+        {/* Show the content only after login */}
+        {!user ? (
+          <div className="login-form">
+            <h2>Please log in to see the content</h2>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button onClick={handleLogin}>Login</button>
           </div>
         ) : (
-          <div className="login-container">
-            <h2>Please log in or sign up:</h2>
-            <form onSubmit={handleLogin}>
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <button type="submit">Login</button>
-            </form>
-            <form onSubmit={handleSignup}>
-              <h3>Or Sign Up:</h3>
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <button type="submit">Sign Up</button>
-            </form>
-            {error && <p>{error}</p>} {/* Display any error messages */}
-          </div>
+          <>
+            {/* The entire page content */}
+            <Home />
+            <Full />
+          </>
         )}
       </div>
     </div>
