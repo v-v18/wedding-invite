@@ -3,6 +3,7 @@ import gsap from "gsap";
 import "./App.css";
 import Home from "./components/Home";
 import Full from "./components/Full";
+import FlowerAnimation from "./components/FlowerAnimation";
 
 // Import the Firebase Authentication functions
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -71,6 +72,7 @@ const App = () => {
         ) : (
           <>
             {/* The entire page content */}
+            <FlowerAnimation />
             <Home />
             <Full />
           </>

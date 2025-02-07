@@ -30,17 +30,32 @@
   margin-bottom: 20px;
 }
 
-.program-table {
-  margin: 0 auto; /* Centers the table */
-  border-collapse: collapse; /* Removes any default table borders */
+/* 🔹 Image Event Cards */
+.events-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
 }
 
-.program-table td {
-  padding: 5px 15px;
-  text-align: left; /* Left-aligns text in each cell */
-  font-size: 1.3rem;
+.event-card {
+  width: 180px;
+  opacity: 0;  /* Initially hidden */
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+  text-align: center;
 }
 
-.program-table td:first-child {
-  font-weight: bold; /* Bold the time */
+.event-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event-title {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: bold;
 }
