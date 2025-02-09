@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/wedding-invite/static/css/main.725fb0ab.css",
-    "main.js": "/wedding-invite/static/js/main.625b96b8.js",
+    "main.css": "/wedding-invite/static/css/main.380da49c.css",
+    "main.js": "/wedding-invite/static/js/main.e25b2cd1.js",
     "static/media/cake.jpg": "/wedding-invite/static/media/cake.b220348b149a6d306c14.jpg",
     "static/media/flowers3.jpg": "/wedding-invite/static/media/flowers3.7a871dd110378f4aceaa.jpg",
     "static/media/dinner.jpg": "/wedding-invite/static/media/dinner.cb86d64eeeb8cae09f93.jpg",
@@ -10,11 +10,11 @@
     "static/media/cocktail.jpg": "/wedding-invite/static/media/cocktail.1b52fb8ae63b32ad354d.jpg",
     "static/media/flowers4.png": "/wedding-invite/static/media/flowers4.17dc5570d1806ff908db.png",
     "index.html": "/wedding-invite/index.html",
-    "main.725fb0ab.css.map": "/wedding-invite/static/css/main.725fb0ab.css.map",
-    "main.625b96b8.js.map": "/wedding-invite/static/js/main.625b96b8.js.map"
+    "main.380da49c.css.map": "/wedding-invite/static/css/main.380da49c.css.map",
+    "main.e25b2cd1.js.map": "/wedding-invite/static/js/main.e25b2cd1.js.map"
   },
   "entrypoints": [
-    "static/css/main.725fb0ab.css",
-    "static/js/main.625b96b8.js"
+    "static/css/main.380da49c.css",
+    "static/js/main.e25b2cd1.js"
   ]
 }
