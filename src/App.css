@@ -1,63 +1,203 @@
-/* Full-page background */
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: url("flowers3.jpg") no-repeat center center/cover;
-    z-index: -1; /* Behind all content */
-    background-size: auto;
-  }
-  
-  /* Main content container */
-  .content {
-    position: relative;
-    width: 100%;
-    z-index: 1;
-  }
-  
-  /* Ensure sections stack correctly */
-  .home-container {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: black;
-  }
-  
-  .full-container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    background-color: transparent; /* Important: Transparency */
-  }
-
-.falling-flower {
-  opacity: 0.8;
-  pointer-events: none;
-  position: absolute;
+/* Ensure text remains in normal case */
+* {
+  text-transform: none !important;
 }
 
-.flower-container {
+/* 🔹 Load the OPTI Serlio Font for Body Text */
+@font-face {
+  font-family: 'OPTISerlio';
+  src: url('/public/fonts/OPTISerlio.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none !important;
+}
+
+/* 🔹 Load the Mrs Eaves Font for Headers */
+@font-face {
+  font-family: 'MrsEaves';
+  src: url('/public/fonts/mrs-eaves-italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  text-transform: none !important;
+}
+
+/* 🔹 Apply the Fonts */
+body, .full-container, .section, .navbar, .banner {
+  font-family: 'MrsEaves', serif;
+  color: #38383d;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: normal;
+}
+
+.home-container {
+  font-family: 'MrsEaves', serif;
+  color: #38383d;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: normal;
+  padding-top: 100%;
+}
+
+h1, h2, h3, .home-title, .wedding-date {
+  font-family: 'OPTISerlio', serif;
+  color: #38383d;
+  font-size: 14px;
+  letter-spacing: 2px;
+  line-height: 13px;
+  text-transform: none !important;
+}
+
+
+/* 🔹 Prevent Page-Level Scrolling */
+html, body {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* 🔹 Banner Styling */
+.banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: none;
+  color: black;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 0;
+  z-index: 2000; /* Ensures it's above everything */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* 🔹 Background Image */
+.background {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  z-index: -1; /* Ensure it stays in the background */
-  overflow: hidden;
+  background: url("flowers9c.jpg") no-repeat center center/cover;
+  z-index: -1; /* Behind all content */
+  background-size: cover;
 }
 
-/* .app-container {
-  position: relative;
+/* 🔹 Fixed Navigation Bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 0;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  color: #38383d;
+}
+
+.navbar ul li {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar ul li:hover {
+  color: #ff4081;
+}
+
+/* 🔹 Logout Button */
+.logout-btn {
+  color: red;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  color: darkred;
+}
+
+/* 🔹 Sections */
+.section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  background: linear-gradient(to bottom, #fff7f7, #ffebeb);
-  min-height: 100vh;
-} 
-*/
-  
+  opacity: 0;
+  visibility: hidden; /* Ensures sections don't interfere with interactions */
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  overflow-y: auto; /* Allows scrolling within the section */
+  padding: 50px 20px; /* Adds padding for content */
+}
+
+.section.active {
+  opacity: 1;
+  visibility: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto
+}
+
+/* Alternate Background Colors for Sections */
+#photos,
+#donation {
+  background-color: #f7f7f7;
+  color: black;
+}
+
+/* 🔹 Login Form Styling */
+.login-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-form input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 80%;
+  max-width: 300px;
+}
+
+.login-form button {
+  padding: 10px 20px;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #e60074;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}

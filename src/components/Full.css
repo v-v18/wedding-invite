@@ -12,25 +12,13 @@
   text-align: center;
 }
 
-.countdown-title {
+.program-title {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.countdown-time {
-  font-size: 40px;
-  margin-bottom: 30px;
-}
-
-.program-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-decoration: underline;
   margin-bottom: 20px;
 }
 
-/* 🔹 Image Event Cards */
+/* --- Event Cards Container --- */
 .events-container {
   display: flex;
   justify-content: center;
@@ -39,23 +27,67 @@
   margin-top: 20px;
 }
 
+/* --- Event Card Styling --- */
 .event-card {
   width: 180px;
-  opacity: 0;  /* Initially hidden */
-  transform: translateY(50px);
-  transition: all 0.8s ease-in-out;
+  transition: all 0.4s ease-in-out;
   text-align: center;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
-.event-image {
+/* Remove any default image borders and set a smooth transition */
+.event-card img {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+  object-fit: cover;
+}
+
+/* Hover Effect */
+.event-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Expanded Card */
+.event-card.expanded {
+  width: 350px;
+  transform: scale(1);
+  transition: all 0.4s ease-in-out;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.event-card.expanded img {
+  transform: scale(1.1);
+  border-radius: 10px;
+}
+
+/* --- Text Styling --- */
+.event-time {
+  font-size: 16px;
+  transition: font-size 0.3s ease-in-out;
 }
 
 .event-title {
   margin-top: 8px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
+  transition: font-size 0.3s ease-in-out;
+}
+
+/* --- Details Section --- */
+.event-details-container {
+  text-align: left;
+  font-size: 16px;
+  margin-top: 10px;
+  line-height: 1.5;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  padding: 5px;
 }
