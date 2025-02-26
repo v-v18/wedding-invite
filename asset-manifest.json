@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.css": "/wedding-invite/static/css/main.e8c43f68.css",
-    "main.js": "/wedding-invite/static/js/main.f5a1237a.js",
+    "main.css": "/wedding-invite/static/css/main.12ece0c6.css",
+    "main.js": "/wedding-invite/static/js/main.5013b5b2.js",
+    "static/media/photo-session.jpg": "/wedding-invite/static/media/photo-session.be7d4d4bab3f50b1d1f4.jpg",
+    "static/media/flowers9c-test4.jpg": "/wedding-invite/static/media/flowers9c-test4.f5292ea60f96a1c612fb.jpg",
     "static/media/cake.jpg": "/wedding-invite/static/media/cake.b220348b149a6d306c14.jpg",
-    "static/media/flowers9c.jpg": "/wedding-invite/static/media/flowers9c.7da5b51412e62c4aeaf0.jpg",
+    "static/media/relocation.jpg": "/wedding-invite/static/media/relocation.c3d2e9aba6543b3b0352.jpg",
     "static/media/dinner.jpg": "/wedding-invite/static/media/dinner.cb86d64eeeb8cae09f93.jpg",
+    "static/media/flowers9c-test.jpg": "/wedding-invite/static/media/flowers9c-test.1bfae89d13ef8a24609c.jpg",
     "static/media/ceremony.jpg": "/wedding-invite/static/media/ceremony.c81f0891ac5a318207e9.jpg",
     "static/media/dance.jpg": "/wedding-invite/static/media/dance.ea032ec3c31a89744354.jpg",
     "static/media/cocktail.jpg": "/wedding-invite/static/media/cocktail.1b52fb8ae63b32ad354d.jpg",
@@ -12,11 +15,11 @@
     "static/media/mrs-eaves-italic.ttf": "/wedding-invite/static/media/mrs-eaves-italic.2f31db946e9c46737c0e.ttf",
     "static/media/flowers4.png": "/wedding-invite/static/media/flowers4.17dc5570d1806ff908db.png",
     "index.html": "/wedding-invite/index.html",
-    "main.e8c43f68.css.map": "/wedding-invite/static/css/main.e8c43f68.css.map",
-    "main.f5a1237a.js.map": "/wedding-invite/static/js/main.f5a1237a.js.map"
+    "main.12ece0c6.css.map": "/wedding-invite/static/css/main.12ece0c6.css.map",
+    "main.5013b5b2.js.map": "/wedding-invite/static/js/main.5013b5b2.js.map"
   },
   "entrypoints": [
-    "static/css/main.e8c43f68.css",
-    "static/js/main.f5a1237a.js"
+    "static/css/main.12ece0c6.css",
+    "static/js/main.5013b5b2.js"
   ]
 }
