@@ -5,6 +5,7 @@ import { auth } from "./firebase";
 import "./App.css";
 import Home from "./components/Home";
 import Full from "./components/Full";
+import Photos from "./components/Photos";
 import FlowerAnimation from "./components/FlowerAnimation";
 
 const sections = ["home", "program", "dress code", "dining", "photos", "donation"];
@@ -119,7 +120,7 @@ const App = () => {
                 {index === 1 && <Full />}
                 {index === 2 && <h2>Dress Code</h2>}
                 {index === 3 && <h2>Dining & Menu</h2>}
-                {index === 4 && <h2>Photo Gallery</h2>}
+                {index === 4 && <Photos />}
                 {index === 5 && <h2>Donation</h2>}
               </div>
             ))}

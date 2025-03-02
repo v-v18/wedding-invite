@@ -53,6 +53,7 @@ h1, h2, h3, .home-title, .wedding-date {
 html, body {
   overflow: hidden;
   height: 100%;
+  width: 100%;
 }
 
 /* 🔹 Banner Styling */
@@ -79,9 +80,17 @@ html, body {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: url("flowers9c.jpg") no-repeat center center/cover;
+  background: url("flowers9c-test4.jpg") no-repeat center center;
   z-index: -1; /* Behind all content */
   background-size: cover;
+  background-attachment: fixed;
+}
+/* 🔹 Responsive Background for Mobile (9:16) */
+@media screen and (max-aspect-ratio: 9/16) {
+  .background {
+    background: url('flowers9c-test.jpg') no-repeat center top;
+    background-size: contain; /* Ensures the full frame is visible */
+  }
 }
 
 /* 🔹 Fixed Navigation Bar */

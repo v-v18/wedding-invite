@@ -1,0 +1,48 @@
+.photos-container {
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  font-family: "MrsEaves", serif;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+/* 🔹 Row for the first 3 photos */
+.photo-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.photo-item {
+  width: 200px;  /* Set a uniform width */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.photo-item:hover {
+  transform: scale(1.05);
+}
+
+/* 🔹 Main Large Photo (BUM01824.JPG) */
+.main-photo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.main-photo {
+  width: 80%;  /* Adjust width for responsiveness */
+  max-width: 900px;  /* Prevent it from being too large */
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
